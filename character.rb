@@ -9,7 +9,7 @@ class Character
     @defense = defense
   end
 
-  def disp_hp(character)
+  def disp_individual_character_hp(character)
     puts "【#{character.name}】HP: #{character.hp}"
   end
 end
