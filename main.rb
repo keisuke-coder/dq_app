@@ -10,8 +10,8 @@ monster = Monster.new(name: "アークデーモン", hp: 210, offense: 140, defe
 
 def disp_multiple_character_hp(brave, monster)
   puts "*=*=*=*=*=*=*=*=*=*=*=*"
-  brave.disp_individual_character_hp(brave)
-  monster.disp_individual_character_hp(monster)
+  brave.disp_individual_character_hp
+  monster.disp_individual_character_hp
   puts "*=*=*=*=*=*=*=*=*=*=*=*"
 end
 
