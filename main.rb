@@ -25,12 +25,11 @@ def disp_dead_character(brave, monster)
 end
 
 puts "#{monster.name}があらわれた！"
-while true
+while brave.hp >= 1 || monster.hp >= 1
   brave.attack(monster)
-  disp_dead_character(brave, monster)
   break if monster.hp == 0
   monster.attack(brave)
   disp_multiple_character_hp(brave, monster)
-  disp_dead_character(brave, monster)
   break if brave.hp == 0
 end
+disp_dead_character(brave, monster)

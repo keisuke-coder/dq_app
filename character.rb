@@ -1,6 +1,6 @@
 class Character
   #キャラクターの登録
-  attr_reader :name, :hp, :offense, :defense
+  attr_reader :name, :hp, :defense
   attr_writer :hp
   def initialize(name:, hp:, offense:, defense:)
     @name = name
