@@ -4,8 +4,8 @@ require "./monster.rb"
 
 
 brave = Brave.new(name: "ゆうしゃ", hp: 238, offense: 203, defense: 129)
-monster = Monster.new(name: "アークデーモン", hp: 210, offense: 140, defense: 80)
-#monster = Monster.new(name: "シドー", hp: 250, offense: 255, defense: 255)
+#monster = Monster.new(name: "アークデーモン", hp: 210, offense: 140, defense: 80)
+monster = Monster.new(name: "シドー", hp: 250, offense: 255, defense: 255)
 
 
 def disp_multiple_character_hp(brave, monster)
@@ -17,7 +17,6 @@ end
 
 def disp_dead_character(brave, monster)
   if monster.hp == 0
-    disp_multiple_character_hp(brave, monster)
     puts "#{monster.name} をやっつけた!"
   elsif brave.hp == 0 
     puts "#{brave.name} はしんでしまった!"
@@ -25,11 +24,9 @@ def disp_dead_character(brave, monster)
 end
 
 puts "#{monster.name}があらわれた！"
-while brave.hp >= 1 || monster.hp >= 1
+while brave.hp >= 1 && monster.hp >= 1
   brave.attack(monster)
-  break if monster.hp == 0
-  monster.attack(brave)
+  monster.attack(brave) if monster.hp >= 1
   disp_multiple_character_hp(brave, monster)
-  break if brave.hp == 0
 end
 disp_dead_character(brave, monster)
